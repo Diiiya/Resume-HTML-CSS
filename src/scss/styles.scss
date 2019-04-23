@@ -1,15 +1,193 @@
-$fontColor: #0091aa;
-$colorHeading: #be4a14;
-#content  // div with id: content
-{
-    color: $fontColor;
+/* Colour palette
+#2B2D42 - dark blue
+#8D99AE - light blue
+#EDF2F4 - blue/white
+#EF233C - red
+*/
+
+/* Global styles
+-------------------------------------------*/
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
 }
 
-h2
-{
-    color: $colorHeading;
+h1, h2 {
+    font-family: 'Sniglet', cursive;
+    font-weight: 400;
 }
 
-h1{
-    @extend h2;
+h1 {
+    font-size: 80px;
+}
+
+h2 {
+    font-size: 40px;
+    margin-top: 0;
+}
+
+h3 {
+    margin: 0;
+}
+
+a {
+    color: #EF233C;
+}
+
+a.hover {
+    text-decoration: none;
+}
+
+.content-wrap {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 60px 50px;
+    overflow: auto;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.button {
+    text-decoration: none;
+    background: #EF233C;
+    color: white;
+    padding: 10px;
+    display: inline-block;
+}
+
+/* Header and Footer
+-------------------------------------------*/
+header, footer {
+    background: #2B2D42;
+    color: #8D99AE;
+}
+
+header {
+    padding-top: 50px;
+    position: relative;
+}
+
+.download {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.download:hover {
+    background: #EDF2F4;
+    color: #EF233C;
+}
+
+/* Navigation */
+nav {
+    text-align: center;
+    background: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+nav a {
+    display: inline-block;
+    padding: 15px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+nav a:hover {
+    background: #EF233C;
+    color: white;
+}
+
+header h1, header h2 {
+    color: #EDF2F4;
+    margin: 0;
+}
+
+.profile-img {
+    border-radius: 50%;
+}
+
+.job-description {
+    margin-bottom: 25px;
+}
+
+.job-description p:first-of-type {
+    margin-top: 0;
+}
+
+/* footer */
+footer {
+    text-align: center;
+}
+
+.contact-info a {
+    padding: 10px;
+    display: inline-block;
+}
+
+/* Experience section
+-------------------------------------------*/
+.work {
+    // background: #EDF2F4;
+    background: linear-gradient(rgba(141, 153, 174, 0.8), rgba(255, 255, 255, 0.5)),
+    url(https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80) no-repeat fixed;
+    background-size: cover;
+}
+
+/* for any paragraph after h3 */
+h3 ~ p {
+    margin: 0;
+}
+
+/* Education section
+-------------------------------------------*/
+.education {
+    background: #EDF2F4;
+    // background: linear-gradient(rgba(141, 153, 174, 0.8), rgba(255, 255, 255, 0.5)),
+    // url(https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1082&q=80) no-repeat fixed;
+    // background-size: cover;
+}
+
+/* for every h3 after a p element */
+p + h3 {
+    margin-top: 30px;
+}
+
+
+
+/* Media queries
+-------------------------------------------*/
+@media (min-width: 900px) {
+    .col-narrow {
+        width: 40%;
+        float: left;
+    }
+    .col-wide {
+        width: 60%;
+        float: left;
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 899px) {
+    header {
+        text-align: center;
+    }
+    .profile-img {
+        width: 200px;
+        height: 200px;
+    }
 }
